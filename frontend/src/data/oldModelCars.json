@@ -1,0 +1,170 @@
+[
+  {
+    "id": "old-car-501",
+    "name": "Maruti Suzuki Swift VXi Old Model",
+    "type": "car",
+    "category": "old-model",
+    "subCategory": "Old Model Cars",
+    "brand": "Maruti Suzuki",
+    "modelYear": 2013,
+    "price": 310000,
+    "formattedPrice": "₹3.10 Lakh",
+    "kmDriven": 68000,
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "condition": "Good",
+    "ownership": "2nd Owner",
+    "color": "Pearl White",
+    "location": "Coimbatore, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": false,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Reliable 2013 Swift VXi with K12 petrol engine. Smooth gearshifts, new clutch plate installed recently, Pioneer audio unit, and cold AC.",
+    "inspectionScore": 8.7,
+    "specs": {
+      "engine": "1197 cc K12 Petrol",
+      "power": "83 bhp @ 6000 rpm",
+      "torque": "115 Nm @ 4000 rpm",
+      "seating": "5 Seater",
+      "mileage": "19 kmpl",
+      "insuranceValid": "Mar 2026"
+    },
+    "features": ["Power Windows", "Chilling AC", "Pioneer Music System", "Central Locking"],
+    "seller": {
+      "name": "Arun Kumar",
+      "type": "Individual Seller",
+      "phone": "+91 94440 22331",
+      "rating": 4.6,
+      "memberSince": "2023"
+    }
+  },
+  {
+    "id": "old-car-502",
+    "name": "Honda City 1.5 i-VTEC V (2012 Model)",
+    "type": "car",
+    "category": "old-model",
+    "subCategory": "Old Model Cars",
+    "brand": "Honda",
+    "modelYear": 2012,
+    "price": 285000,
+    "formattedPrice": "₹2.85 Lakh",
+    "kmDriven": 84000,
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "condition": "Good",
+    "ownership": "2nd Owner",
+    "color": "Taffeta White",
+    "location": "Salem, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": true,
+    "image": "https://images.unsplash.com/photo-1541348263662-e082662d82da?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1541348263662-e082662d82da?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Arrow-shot styling classic 3rd Gen Honda City. High revving 118 bhp i-VTEC engine, alloy wheels, leatherette seat covers, and smooth suspension.",
+    "inspectionScore": 8.8,
+    "specs": {
+      "engine": "1497 cc i-VTEC Petrol",
+      "power": "118 bhp @ 6600 rpm",
+      "torque": "146 Nm @ 4800 rpm",
+      "seating": "5 Seater",
+      "mileage": "17 kmpl",
+      "insuranceValid": "Jan 2026"
+    },
+    "features": ["Dual Airbags", "Alloy Wheels", "Automatic Climate Control", "Rear AC Vents"],
+    "seller": {
+      "name": "Mani Sekhar",
+      "type": "Individual Seller",
+      "phone": "+91 98422 11009",
+      "rating": 4.7,
+      "memberSince": "2024"
+    }
+  },
+  {
+    "id": "old-car-503",
+    "name": "Hyundai i10 Era 1.1 iIRDE (2011 Model)",
+    "type": "car",
+    "category": "old-model",
+    "subCategory": "Old Model Cars",
+    "brand": "Hyundai",
+    "modelYear": 2011,
+    "price": 195000,
+    "formattedPrice": "₹1.95 Lakh",
+    "kmDriven": 72000,
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "condition": "Good",
+    "ownership": "2nd Owner",
+    "color": "Blushing Red",
+    "location": "Chennai, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": false,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Compact city hatchback i10 Era with light power steering, powerful AC, tight turning radius, and clean interior cabin.",
+    "inspectionScore": 8.5,
+    "specs": {
+      "engine": "1086 cc iIRDE Petrol",
+      "power": "68 bhp @ 5500 rpm",
+      "torque": "99 Nm @ 2800 rpm",
+      "seating": "5 Seater",
+      "mileage": "20 kmpl",
+      "insuranceValid": "Aug 2026"
+    },
+    "features": ["Power Steering", "Front Power Windows", "Single DIN Stereo", "Engine Immobilizer"],
+    "seller": {
+      "name": "Murugan Motors",
+      "type": "Certified Dealer",
+      "phone": "+91 98840 55112",
+      "rating": 4.5,
+      "memberSince": "2020"
+    }
+  },
+  {
+    "id": "old-car-504",
+    "name": "Maruti Alto 800 LXi (2014 Model)",
+    "type": "car",
+    "category": "old-model",
+    "subCategory": "Old Model Cars",
+    "brand": "Maruti Suzuki",
+    "modelYear": 2014,
+    "price": 175000,
+    "formattedPrice": "₹1.75 Lakh",
+    "kmDriven": 59000,
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "condition": "Good",
+    "ownership": "1st Owner",
+    "color": "Silky Silver",
+    "location": "Madurai, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": true,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Ultra low budget 1st owner Alto 800 LXi with 22+ kmpl high fuel efficiency, fresh seat covers, and new tires.",
+    "inspectionScore": 8.6,
+    "specs": {
+      "engine": "796 cc F8D Petrol",
+      "power": "47 bhp @ 6000 rpm",
+      "torque": "69 Nm @ 3500 rpm",
+      "seating": "5 Seater",
+      "mileage": "22.7 kmpl",
+      "insuranceValid": "Nov 2026"
+    },
+    "features": ["Power Steering", "Manual AC", "High Mileage F8D Engine", "Low Maintenance"],
+    "seller": {
+      "name": "Dinesh Kumar",
+      "type": "Individual Seller",
+      "phone": "+91 97890 55443",
+      "rating": 4.6,
+      "memberSince": "2023"
+    }
+  }
+]

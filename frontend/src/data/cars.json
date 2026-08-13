@@ -1,0 +1,256 @@
+[
+  {
+    "id": "c-201",
+    "name": "Mahindra Thar LX Hard Top 4x4 Petrol AT",
+    "type": "car",
+    "category": "top-model",
+    "subCategory": "Top/Latest Model Cars",
+    "brand": "Mahindra",
+    "modelYear": 2022,
+    "price": 1480000,
+    "formattedPrice": "₹14.80 Lakh",
+    "kmDriven": 18200,
+    "fuelType": "Petrol",
+    "transmission": "Automatic",
+    "condition": "Excellent",
+    "ownership": "1st Owner",
+    "color": "Napoli Black",
+    "location": "Chennai, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": true,
+    "image": "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Bold black 4x4 Thar with convertable hardtop, upgraded alloy wheels, 7-inch touch infotainment with Apple CarPlay, and off-road skid plates.",
+    "inspectionScore": 9.5,
+    "specs": {
+      "engine": "1997 cc mStallion TGDi",
+      "power": "150 bhp @ 5000 rpm",
+      "torque": "320 Nm @ 1500 rpm",
+      "seating": "4 Seater",
+      "mileage": "13 kmpl",
+      "insuranceValid": "Oct 2026"
+    },
+    "features": ["Mechanical Locking Differential", "Touchscreen Infotainment", "4x4 Transfer Case", "Roll Cage Frame"],
+    "seller": {
+      "name": "RPM Vault Motors",
+      "type": "Certified Dealer",
+      "phone": "+91 98840 99000",
+      "rating": 4.9,
+      "memberSince": "2020"
+    }
+  },
+  {
+    "id": "c-202",
+    "name": "BMW 3 Series 330i M Sport",
+    "type": "car",
+    "category": "top-model",
+    "subCategory": "Top/Latest Model Cars",
+    "brand": "BMW",
+    "modelYear": 2021,
+    "price": 3850000,
+    "formattedPrice": "₹38.50 Lakh",
+    "kmDriven": 24000,
+    "fuelType": "Petrol",
+    "transmission": "Automatic",
+    "condition": "Excellent",
+    "ownership": "1st Owner",
+    "color": "Portimao Blue",
+    "location": "Bangalore, Karnataka",
+    "verified": true,
+    "isHotDeal": false,
+    "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=1200&q=80",
+      "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Mint condition BMW 330i M Sport with launch control, Harman Kardon surround audio, M aerodynamic kit, and full dealer service log.",
+    "inspectionScore": 9.7,
+    "specs": {
+      "engine": "1998 cc TwinPower Turbo",
+      "power": "258 bhp @ 5000 rpm",
+      "torque": "400 Nm @ 1550 rpm",
+      "seating": "5 Seater",
+      "mileage": "14 kmpl",
+      "insuranceValid": "Dec 2026"
+    },
+    "features": ["M Sport Differential", "Harman Kardon Sound", "Gesture Control", "Head-Up Display"],
+    "seller": {
+      "name": "Luxury Auto Hub",
+      "type": "Certified Dealer",
+      "phone": "+91 99400 77112",
+      "rating": 5.0,
+      "memberSince": "2018"
+    }
+  },
+  {
+    "id": "c-203",
+    "name": "Maruti Suzuki Swift VXi Old Model",
+    "type": "car",
+    "category": "old-model",
+    "subCategory": "Old Model Cars",
+    "brand": "Maruti Suzuki",
+    "modelYear": 2014,
+    "price": 320000,
+    "formattedPrice": "₹3.20 Lakh",
+    "kmDriven": 68000,
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "condition": "Good",
+    "ownership": "2nd Owner",
+    "color": "Pearl Metallic White",
+    "location": "Coimbatore, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": false,
+    "image": "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Reliable 2014 Swift VXi with smooth engine performance, new clutch plate fitted, Pioneer audio unit with Bluetooth, and cold AC.",
+    "inspectionScore": 8.7,
+    "specs": {
+      "engine": "1197 cc K12 Petrol",
+      "power": "83 bhp @ 6000 rpm",
+      "torque": "115 Nm @ 4000 rpm",
+      "seating": "5 Seater",
+      "mileage": "19 kmpl",
+      "insuranceValid": "Mar 2026"
+    },
+    "features": ["Power Windows", "Chilling AC", "Pioneer Music System", "Central Locking"],
+    "seller": {
+      "name": "Arun Kumar",
+      "type": "Individual Seller",
+      "phone": "+91 94440 22331",
+      "rating": 4.6,
+      "memberSince": "2023"
+    }
+  },
+  {
+    "id": "c-204",
+    "name": "Tata Safari XZA+ Dark Edition",
+    "type": "car",
+    "category": "top-model",
+    "subCategory": "Top/Latest Model Cars",
+    "brand": "Tata",
+    "modelYear": 2023,
+    "price": 2150000,
+    "formattedPrice": "₹21.50 Lakh",
+    "kmDriven": 15400,
+    "fuelType": "Diesel",
+    "transmission": "Automatic",
+    "condition": "Excellent",
+    "ownership": "1st Owner",
+    "color": "Oberon Black",
+    "location": "Chennai, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": true,
+    "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Commanding flagship Tata Safari Dark Edition with panoramic sunroof, ventilated captain seats, JBL 9-speaker system, and ADAS safety suite.",
+    "inspectionScore": 9.6,
+    "specs": {
+      "engine": "1956 cc Kryotec Diesel",
+      "power": "170 bhp @ 3750 rpm",
+      "torque": "350 Nm @ 1750 rpm",
+      "seating": "6 Seater Captain Seats",
+      "mileage": "16 kmpl",
+      "insuranceValid": "Nov 2027"
+    },
+    "features": ["Panoramic Sunroof", "ADAS Level 2", "Ventilated Seats", "360 3D HD Camera"],
+    "seller": {
+      "name": "RPM Vault Motors",
+      "type": "Certified Dealer",
+      "phone": "+91 98840 99000",
+      "rating": 4.9,
+      "memberSince": "2020"
+    }
+  },
+  {
+    "id": "c-205",
+    "name": "Honda City 1.5 i-VTEC V (2012 Old Model)",
+    "type": "car",
+    "category": "old-model",
+    "subCategory": "Old Model Cars",
+    "brand": "Honda",
+    "modelYear": 2012,
+    "price": 285000,
+    "formattedPrice": "₹2.85 Lakh",
+    "kmDriven": 84000,
+    "fuelType": "Petrol",
+    "transmission": "Manual",
+    "condition": "Good",
+    "ownership": "2nd Owner",
+    "color": "Taffeta White",
+    "location": "Salem, Tamil Nadu",
+    "verified": true,
+    "isHotDeal": false,
+    "image": "https://images.unsplash.com/photo-1541348263662-e082662d82da?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1541348263662-e082662d82da?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Arrow shot styling classic 3rd Gen Honda City. Super revv-happy i-VTEC engine, alloy wheels, smooth gearshifts, leatherette seat covers.",
+    "inspectionScore": 8.8,
+    "specs": {
+      "engine": "1497 cc i-VTEC Petrol",
+      "power": "118 bhp @ 6600 rpm",
+      "torque": "146 Nm @ 4800 rpm",
+      "seating": "5 Seater",
+      "mileage": "17 kmpl",
+      "insuranceValid": "Jan 2026"
+    },
+    "features": ["Dual Airbags", "Alloy Wheels", "Automatic Climate Control", "Rear AC Vents"],
+    "seller": {
+      "name": "Mani Sekhar",
+      "type": "Individual Seller",
+      "phone": "+91 98422 11009",
+      "rating": 4.7,
+      "memberSince": "2024"
+    }
+  },
+  {
+    "id": "c-206",
+    "name": "Hyundai Creta SX (O) Turbo Petrol",
+    "type": "car",
+    "category": "top-model",
+    "subCategory": "Top/Latest Model Cars",
+    "brand": "Hyundai",
+    "modelYear": 2022,
+    "price": 1540000,
+    "formattedPrice": "₹15.40 Lakh",
+    "kmDriven": 21000,
+    "fuelType": "Petrol",
+    "transmission": "Automatic (DCT)",
+    "condition": "Excellent",
+    "ownership": "1st Owner",
+    "color": "Titan Grey",
+    "location": "Bangalore, Karnataka",
+    "verified": true,
+    "isHotDeal": true,
+    "image": "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=80",
+    "gallery": [
+      "https://images.unsplash.com/photo-1583121274602-3e2820c69888?auto=format&fit=crop&w=1200&q=80"
+    ],
+    "description": "Punchy 1.4 Turbo GDi engine mated with 7-speed DCT dual clutch transmission. Features Bose 8-speaker audio, voice sunroof, blue-link connected car features.",
+    "inspectionScore": 9.5,
+    "specs": {
+      "engine": "1353 cc Turbo GDi",
+      "power": "140 bhp @ 6000 rpm",
+      "torque": "242 Nm @ 1500 rpm",
+      "seating": "5 Seater",
+      "mileage": "16 kmpl",
+      "insuranceValid": "Sep 2027"
+    },
+    "features": ["7-Speed DCT Paddle Shifters", "Bose Premium Sound", "Panoramic Sunroof", "Traction Control"],
+    "seller": {
+      "name": "DriveLine Certified",
+      "type": "Certified Dealer",
+      "phone": "+91 97310 44556",
+      "rating": 4.8,
+      "memberSince": "2021"
+    }
+  }
+]
