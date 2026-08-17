@@ -13,25 +13,26 @@ export default function VehicleCard({
 }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ y: -6 }}
-      className="group bg-[#141418] rounded-2xl overflow-hidden border border-white/10 hover:border-[#ff5500]/50 transition-all duration-300 shadow-xl flex flex-col h-full relative"
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+      whileHover={{ y: -4, transition: { duration: 0.28, ease: [0.16, 1, 0.3, 1] } }}
+      className="group bg-[#141418] rounded-2xl overflow-hidden border border-white/10 hover:border-[#ff5500]/50 transition-[border-color,box-shadow] duration-300 shadow-xl flex flex-col h-full relative transform-gpu will-change-transform"
     >
       {/* Card Header Media Container */}
-      <div className="relative h-56 overflow-hidden bg-black">
+      <div className="relative h-56 overflow-hidden bg-black transform-gpu">
         <img
           src={vehicle.image}
           alt={vehicle.name}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] opacity-90 group-hover:opacity-100 transform-gpu will-change-transform"
           loading="lazy"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#141418] via-transparent to-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#141418] via-transparent to-black/40 pointer-events-none" />
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10">
+        <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 z-10 pointer-events-none">
           {vehicle.verified && (
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-500/90 text-white text-[11px] font-extrabold shadow-md backdrop-blur-md">
               <ShieldCheck className="w-3.5 h-3.5" /> VERIFIED
@@ -52,10 +53,10 @@ export default function VehicleCard({
           {onToggleCompare && (
             <button
               onClick={() => onToggleCompare(vehicle)}
-              className={`p-2 rounded-lg backdrop-blur-md transition-all ${
+              className={`p-2 rounded-lg backdrop-blur-md transition-all duration-200 active:scale-95 transform-gpu ${
                 isCompared
                   ? 'bg-[#ff5500] text-white shadow-lg shadow-[#ff5500]/50'
-                  : 'bg-black/60 text-gray-300 hover:text-white border border-white/20'
+                  : 'bg-black/60 text-gray-300 hover:text-white hover:border-white/40 border border-white/20'
               }`}
               title={isCompared ? 'Remove from Compare' : 'Add to Compare'}
             >
@@ -66,10 +67,10 @@ export default function VehicleCard({
           {onToggleFavorite && (
             <button
               onClick={() => onToggleFavorite(vehicle)}
-              className={`p-2 rounded-lg backdrop-blur-md transition-all ${
+              className={`p-2 rounded-lg backdrop-blur-md transition-all duration-200 active:scale-95 transform-gpu ${
                 isFavorite
                   ? 'bg-red-600 text-white shadow-lg shadow-red-600/50'
-                  : 'bg-black/60 text-gray-300 hover:text-red-500 border border-white/20'
+                  : 'bg-black/60 text-gray-300 hover:text-red-500 hover:border-white/40 border border-white/20'
               }`}
               title="Add to Favorites"
             >
@@ -79,7 +80,7 @@ export default function VehicleCard({
         </div>
 
         {/* Bottom Left Type Badge */}
-        <div className="absolute bottom-3 left-3 z-10">
+        <div className="absolute bottom-3 left-3 z-10 pointer-events-none">
           <span className="text-[10px] font-black uppercase tracking-widest px-2 py-0.5 rounded bg-white/15 text-gray-200 backdrop-blur-sm border border-white/10">
             {vehicle.type === 'bike' ? vehicle.subCategory || 'BIKE' : vehicle.subCategory || 'CAR'}
           </span>
@@ -134,7 +135,7 @@ export default function VehicleCard({
             {onOpenEnquire && (
               <button
                 onClick={() => onOpenEnquire(vehicle)}
-                className="px-3 py-2 rounded-lg bg-[#1c1c24] hover:bg-[#262632] text-xs font-bold text-gray-200 border border-white/10 transition-colors"
+                className="px-3 py-2 rounded-lg bg-[#1c1c24] hover:bg-[#262632] hover:text-white active:scale-95 text-xs font-bold text-gray-200 border border-white/10 transition-all duration-200 transform-gpu"
               >
                 Enquire
               </button>
@@ -142,10 +143,10 @@ export default function VehicleCard({
 
             <Link
               to={`/vehicle/${vehicle.type}/${vehicle.id}`}
-              className="p-2.5 rounded-lg bg-[#ff5500] hover:bg-[#e04b00] text-white transition-all shadow-md shadow-[#ff5500]/30"
+              className="p-2.5 rounded-lg bg-[#ff5500] hover:bg-[#e04b00] active:scale-95 text-white transition-all duration-200 shadow-md shadow-[#ff5500]/30 transform-gpu flex items-center justify-center"
               title="View Details"
             >
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform duration-200" />
             </Link>
           </div>
         </div>

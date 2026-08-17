@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, DollarSign, Calendar, Percent } from 'lucide-react';
+import { Calculator } from 'lucide-react';
 
 export default function EmiCalculator({ defaultAmount = 300000 }) {
   const [loanAmount, setLoanAmount] = useState(defaultAmount);

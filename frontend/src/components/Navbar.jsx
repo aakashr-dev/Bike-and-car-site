@@ -10,14 +10,18 @@ export default function Navbar({ wishlistCount = 0 }) {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const isPastThreshold = window.scrollY > 20;
+          setScrolled((prev) => (prev !== isPastThreshold ? isPastThreshold : prev));
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 

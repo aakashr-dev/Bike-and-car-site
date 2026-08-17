@@ -1,5 +1,5 @@
-import React from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
 import { ChevronRight, ChevronDown, Sparkles, Flame } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -9,9 +9,9 @@ export default function HeroSection({
   badgeText = "PREMIUM PRE-OWNED AUTOMOTIVE",
   backgroundImage,
   heroVehicleImage,
-  vehicleType = "bike", // 'bike' or 'car'
-  brightBg = false, // If true, renders background image crystal clear
-  alignBottom = false, // Position title & buttons towards lower bottom of hero section
+  _vehicleType = "bike",
+  brightBg = false,
+  alignBottom = false,
   breadcrumbs = [],
   primaryCtaText,
   primaryCtaLink,
@@ -19,28 +19,57 @@ export default function HeroSection({
   secondaryCtaLink,
   children
 }) {
-  // Lightweight hardware-accelerated subtle parallax
+  // Lightweight hardware-accelerated scroll parallax
   const { scrollY } = useScroll();
-  const bgY = useTransform(scrollY, [0, 700], [0, 90]);
-  const vehicleX = useTransform(scrollY, [0, 700], [0, -60]);
+  const bgY = useTransform(scrollY, [0, 800], [0, 100]);
+  const vehicleXScroll = useTransform(scrollY, [0, 800], [0, -70]);
+
+  // Performant Pointer Parallax (Zero React State Re-renders)
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 120, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 120, damping: 20 });
+
+  useEffect(() => {
+    // Only register mousemove on fine pointer (desktop) devices
+    if (!window.matchMedia('(pointer: fine)').matches) return;
+
+    let rafId = null;
+    const handleMouseMove = (e) => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const { innerWidth, innerHeight } = window;
+        const offsetX = (e.clientX / innerWidth - 0.5) * 16;
+        const offsetY = (e.clientY / innerHeight - 0.5) * 12;
+        mouseX.set(offsetX);
+        mouseY.set(offsetY);
+      });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
+  }, [mouseX, mouseY]);
 
   const verticalAlignClass = (alignBottom || brightBg) ? 'items-end pb-16 sm:pb-20' : 'items-center pt-16';
 
   return (
     <section className={`relative w-full h-screen min-h-[650px] flex ${verticalAlignClass} justify-center overflow-hidden bg-[#08080a] select-none`}>
       
-      {/* Hardware-Accelerated 100% Crisp Background Image */}
+      {/* 100% GPU Hardware-Accelerated Crisp Background Image */}
       <motion.div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 brightness-105 contrast-105 opacity-100 transform-gpu will-change-transform"
-        style={{ backgroundImage: `url(${backgroundImage})`, y: bgY }}
-        initial={{ scale: 1.08, opacity: 0.8 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-100 transform-gpu will-change-transform pointer-events-none"
+        style={{ backgroundImage: `url(${backgroundImage})`, y: bgY, x: springX, scale: 1.05 }}
+        initial={{ opacity: 0.8, scale: 1.08 }}
+        animate={{ opacity: 1, scale: 1.05 }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       />
 
       {/* Dark Vignette & Gradient Overlays (Optimized static GPU layers) */}
       {!brightBg && (
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-black/60 to-black/75" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/40 to-[#08080a]" />
           <div className="absolute inset-0 grid-bg-pattern opacity-20" />
@@ -58,7 +87,7 @@ export default function HeroSection({
             <motion.nav
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.4 }}
+              transition={{ delay: 0.05, duration: 0.3 }}
               className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-gray-200 mb-4 bg-black/80 px-4 py-1.5 rounded-full border border-white/20 backdrop-blur-md shadow-2xl"
             >
               <Link to="/" className="hover:text-[#ff5500] transition-colors">Home</Link>
@@ -78,9 +107,9 @@ export default function HeroSection({
           {/* Badge */}
           {badgeText && (
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.92 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.15, duration: 0.4 }}
+              transition={{ delay: 0.1, duration: 0.35 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#ff5500]/25 border border-[#ff5500]/80 text-[#ff5500] text-xs font-black tracking-widest uppercase mb-4 shadow-[0_0_20px_rgba(255,85,0,0.3)] backdrop-blur-md"
             >
               <Sparkles className="w-3.5 h-3.5 text-[#ff5500]" />
@@ -90,9 +119,9 @@ export default function HeroSection({
 
           {/* Staggered Animated Title with Smooth GPU shadow */}
           <motion.h1
-            initial={{ opacity: 0, y: 25 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.25, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ delay: 0.15, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tight font-['Outfit'] leading-[1.08] drop-shadow-[0_10px_30px_rgba(0,0,0,0.9)] transform-gpu"
           >
             {title}
@@ -101,9 +130,9 @@ export default function HeroSection({
           {/* Subtitle */}
           {subtitle && (
             <motion.p
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.35, duration: 0.5 }}
+              transition={{ delay: 0.25, duration: 0.4 }}
               className="mt-4 text-base sm:text-lg text-gray-100 font-extrabold leading-relaxed max-w-2xl drop-shadow-[0_4px_20px_rgba(0,0,0,0.9)] bg-black/75 px-5 py-2.5 rounded-xl border border-white/15 backdrop-blur-md"
             >
               {subtitle}
@@ -113,9 +142,9 @@ export default function HeroSection({
           {/* CTAs */}
           {(primaryCtaText || secondaryCtaText) && (
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.45, duration: 0.5 }}
+              transition={{ delay: 0.3, duration: 0.4 }}
               className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4"
             >
               {primaryCtaText && (
@@ -140,26 +169,27 @@ export default function HeroSection({
           {children}
         </div>
 
-        {/* Optional Right Column Vehicle Graphic (GPU Hardware Accelerated) */}
+        {/* Right Column Vehicle Graphic (GPU Hardware Accelerated) */}
         {heroVehicleImage && (
           <motion.div
-            style={{ x: vehicleX }}
+            style={{ x: vehicleXScroll }}
             className="hidden lg:flex lg:col-span-5 relative items-center justify-center transform-gpu will-change-transform"
           >
             <motion.div
-              initial={{ x: 200, opacity: 0, scale: 0.85 }}
-              animate={{ x: 0, opacity: 1, scale: 1 }}
-              transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="relative z-10"
+              style={{ x: springX, y: springY }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+              className="relative z-10 transform-gpu"
             >
               <div className="relative group">
-                {/* Static Glowing Backlight instead of expensive drop-shadow filter */}
                 <div className="absolute -inset-2 bg-gradient-to-r from-[#ff5500]/30 to-[#e04b00]/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500" />
                 
                 <img
                   src={heroVehicleImage}
                   alt="Featured Vehicle"
                   loading="eager"
+                  decoding="async"
                   className="relative z-10 w-full max-w-lg object-contain rounded-2xl border border-white/15 shadow-2xl transform-gpu"
                 />
               </div>
@@ -173,7 +203,7 @@ export default function HeroSection({
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 0.8, duration: 0.6 }}
+        transition={{ delay: 0.5, duration: 0.4 }}
         className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-10 text-gray-200 hover:text-[#ff5500] transition-colors cursor-pointer bg-black/80 px-3.5 py-1.5 rounded-full border border-white/20 backdrop-blur-md shadow-2xl"
         onClick={() => window.scrollTo({ top: window.innerHeight - 70, behavior: 'smooth' })}
       >

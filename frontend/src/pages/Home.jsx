@@ -62,20 +62,20 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Card 1: BIKES */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="group relative h-[420px] rounded-3xl overflow-hidden border border-white/15 metal-border flex flex-col justify-end p-8"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative h-[420px] rounded-3xl overflow-hidden border border-white/15 metal-border flex flex-col justify-end p-8 transform-gpu"
           >
             <div
-              className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] transform-gpu will-change-transform"
               style={{ backgroundImage: `url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1200&q=80')` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-black/60 to-transparent pointer-events-none" />
             
             <div className="relative z-10 space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ff5500] text-white text-xs font-black uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#ff5500] text-white text-xs font-black uppercase tracking-wider shadow-md">
                 <Bike className="w-4 h-4" /> PRE-OWNED BIKES
               </div>
               <h3 className="text-3xl font-black text-white font-['Outfit'] uppercase">
@@ -86,7 +86,7 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
               </p>
               <Link
                 to="/bikes"
-                className="inline-flex items-center gap-2 text-[#ff5500] font-extrabold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+                className="inline-flex items-center gap-2 text-[#ff5500] font-extrabold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform duration-300 ease-out transform-gpu"
               >
                 Browse All Bikes <ArrowRight className="w-4 h-4" />
               </Link>
@@ -95,20 +95,20 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
 
           {/* Card 2: CARS */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="group relative h-[420px] rounded-3xl overflow-hidden border border-white/15 metal-border flex flex-col justify-end p-8"
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative h-[420px] rounded-3xl overflow-hidden border border-white/15 metal-border flex flex-col justify-end p-8 transform-gpu"
           >
             <div
-              className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700"
+              className="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] transform-gpu will-change-transform"
               style={{ backgroundImage: `url('https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=80')` }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0c] via-black/60 to-transparent pointer-events-none" />
 
             <div className="relative z-10 space-y-3">
-              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-black uppercase tracking-wider">
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-black uppercase tracking-wider shadow-md">
                 <Car className="w-4 h-4" /> PRE-OWNED CARS
               </div>
               <h3 className="text-3xl font-black text-white font-['Outfit'] uppercase">
@@ -119,7 +119,7 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
               </p>
               <Link
                 to="/cars"
-                className="inline-flex items-center gap-2 text-emerald-400 font-extrabold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform"
+                className="inline-flex items-center gap-2 text-emerald-400 font-extrabold text-sm uppercase tracking-wider group-hover:translate-x-2 transition-transform duration-300 ease-out transform-gpu"
               >
                 Browse All Cars <ArrowRight className="w-4 h-4" />
               </Link>
@@ -144,7 +144,7 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
           <div className="flex items-center gap-2 bg-[#141418] p-1.5 rounded-2xl border border-white/10">
             <button
               onClick={() => setActiveTab('ALL')}
-              className={`px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition-all ${
+              className={`px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition-all duration-200 ${
                 activeTab === 'ALL' ? 'bg-[#ff5500] text-white shadow-md' : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -152,7 +152,7 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
             </button>
             <button
               onClick={() => setActiveTab('BIKES')}
-              className={`px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition-all ${
+              className={`px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition-all duration-200 ${
                 activeTab === 'BIKES' ? 'bg-[#ff5500] text-white shadow-md' : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -160,7 +160,7 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
             </button>
             <button
               onClick={() => setActiveTab('CARS')}
-              className={`px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition-all ${
+              className={`px-5 py-2 rounded-xl text-xs font-extrabold uppercase transition-all duration-200 ${
                 activeTab === 'CARS' ? 'bg-[#ff5500] text-white shadow-md' : 'text-gray-400 hover:text-white'
               }`}
             >
@@ -172,9 +172,9 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
         {/* Listings Grid */}
         <motion.div
           key={activeTab}
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.3 }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {featuredListings.map((vehicle) => (
@@ -207,7 +207,10 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            <motion.div whileHover={{ y: -5 }} className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-colors">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 transform-gpu will-change-transform"
+            >
               <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center mx-auto">
                 <ShieldCheck className="w-6 h-6" />
               </div>
@@ -217,7 +220,10 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
               </p>
             </motion.div>
 
-            <motion.div whileHover={{ y: -5 }} className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-colors">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 transform-gpu will-change-transform"
+            >
               <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center mx-auto">
                 <Tag className="w-6 h-6" />
               </div>
@@ -227,7 +233,10 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
               </p>
             </motion.div>
 
-            <motion.div whileHover={{ y: -5 }} className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-colors">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 transform-gpu will-change-transform"
+            >
               <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center mx-auto">
                 <Zap className="w-6 h-6" />
               </div>
@@ -237,7 +246,10 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
               </p>
             </motion.div>
 
-            <motion.div whileHover={{ y: -5 }} className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-colors">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl text-center space-y-3 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 transform-gpu will-change-transform"
+            >
               <div className="w-12 h-12 rounded-2xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center mx-auto">
                 <Award className="w-6 h-6" />
               </div>
@@ -267,7 +279,10 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-[#141418] border border-white/10 p-6 rounded-2xl space-y-4">
+          <motion.div
+            whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+            className="bg-[#141418] border border-white/10 hover:border-[#ff5500]/30 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-4 transform-gpu"
+          >
             <div className="flex items-center gap-1 text-[#f59e0b]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#f59e0b]" />
@@ -285,9 +300,12 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
                 <span className="text-[10px] text-gray-400">Chennai • GT 650 Owner</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-[#141418] border border-white/10 p-6 rounded-2xl space-y-4">
+          <motion.div
+            whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+            className="bg-[#141418] border border-white/10 hover:border-emerald-500/30 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-4 transform-gpu"
+          >
             <div className="flex items-center gap-1 text-[#f59e0b]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#f59e0b]" />
@@ -305,9 +323,12 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
                 <span className="text-[10px] text-gray-400">Bangalore • Thar 4x4 Owner</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          <div className="bg-[#141418] border border-white/10 p-6 rounded-2xl space-y-4">
+          <motion.div
+            whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+            className="bg-[#141418] border border-white/10 hover:border-[#f59e0b]/30 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-4 transform-gpu"
+          >
             <div className="flex items-center gap-1 text-[#f59e0b]">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-4 h-4 fill-[#f59e0b]" />
@@ -325,7 +346,7 @@ export default function Home({ onToggleFavorite, favoritesList = [], onOpenEnqui
                 <span className="text-[10px] text-gray-400">Coimbatore • Ather 450X Owner</span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 

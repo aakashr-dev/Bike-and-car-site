@@ -1,6 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
-import { ShieldCheck, Award, Users, Wrench, Flame, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Award, Users, Wrench } from 'lucide-react';
 
 export default function About() {
   return (
@@ -71,29 +72,41 @@ export default function About() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl space-y-3">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-3 transform-gpu"
+            >
               <ShieldCheck className="w-8 h-8 text-[#ff5500]" />
               <h4 className="font-extrabold text-white text-base font-['Outfit']">100% Non-Accidental</h4>
               <p className="text-xs text-gray-400">Strict zero-tolerance policy for structural flood or major accident damage.</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl space-y-3">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-3 transform-gpu"
+            >
               <Wrench className="w-8 h-8 text-[#ff5500]" />
               <h4 className="font-extrabold text-white text-base font-['Outfit']">Free Engine Warranty</h4>
               <p className="text-xs text-gray-400">6 months coverage on engine and gearbox components included free.</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl space-y-3">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-3 transform-gpu"
+            >
               <Users className="w-8 h-8 text-[#ff5500]" />
               <h4 className="font-extrabold text-white text-base font-['Outfit']">Verified Owners</h4>
               <p className="text-xs text-gray-400">RTO ownership records and RC documents 100% verified before listing.</p>
-            </div>
+            </motion.div>
 
-            <div className="bg-[#0a0a0c] border border-white/10 p-6 rounded-2xl space-y-3">
+            <motion.div
+              whileHover={{ y: -4, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+              className="bg-[#0a0a0c] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl space-y-3 transform-gpu"
+            >
               <Award className="w-8 h-8 text-[#ff5500]" />
               <h4 className="font-extrabold text-white text-base font-['Outfit']">7-Day Return Policy</h4>
               <p className="text-xs text-gray-400">Love your machine or return it within 7 days for a 100% money back guarantee.</p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
-import { MapPin, Phone, Mail, Clock, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { MapPin, Phone, Clock, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -48,7 +49,10 @@ export default function Contact() {
             </div>
 
             <div className="space-y-4">
-              <div className="bg-[#141418] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
+              <motion.div
+                whileHover={{ y: -3, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+                className="bg-[#141418] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl flex items-start gap-4 transform-gpu"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center shrink-0 mt-1">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -56,9 +60,12 @@ export default function Contact() {
                   <h4 className="font-extrabold text-white text-base font-['Outfit']">Main Flagship Showroom</h4>
                   <p className="text-xs text-gray-300 mt-1">#42, Mount-Poonamallee High Rd, Guindy, Chennai, Tamil Nadu 600032</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-[#141418] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
+              <motion.div
+                whileHover={{ y: -3, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+                className="bg-[#141418] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl flex items-start gap-4 transform-gpu"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center shrink-0 mt-1">
                   <Phone className="w-5 h-5" />
                 </div>
@@ -66,9 +73,12 @@ export default function Contact() {
                   <h4 className="font-extrabold text-white text-base font-['Outfit']">Phone & WhatsApp Hotline</h4>
                   <p className="text-xs text-gray-300 mt-1">Sales: +91 98840 99000 • Valuation: +91 98400 11223</p>
                 </div>
-              </div>
+              </motion.div>
 
-              <div className="bg-[#141418] border border-white/10 p-6 rounded-2xl flex items-start gap-4">
+              <motion.div
+                whileHover={{ y: -3, transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] } }}
+                className="bg-[#141418] border border-white/10 hover:border-[#ff5500]/40 transition-[border-color,box-shadow] duration-300 p-6 rounded-2xl flex items-start gap-4 transform-gpu"
+              >
                 <div className="w-10 h-10 rounded-xl bg-[#ff5500]/15 text-[#ff5500] border border-[#ff5500]/30 flex items-center justify-center shrink-0 mt-1">
                   <Clock className="w-5 h-5" />
                 </div>
@@ -76,7 +86,7 @@ export default function Contact() {
                   <h4 className="font-extrabold text-white text-base font-['Outfit']">Working Hours</h4>
                   <p className="text-xs text-gray-300 mt-1">Monday - Sunday: 9:30 AM - 8:30 PM (All 7 Days Open)</p>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
 

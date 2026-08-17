@@ -10,16 +10,16 @@ export default function DrivingDivider({ type = 'bike', label = '' }) {
 
       {/* Moving Vehicle Silhouette along the line (Hardware Accelerated) */}
       <motion.div
-        initial={{ x: '-100vw' }}
-        animate={{ x: '100vw' }}
-        transition={{ duration: 8, ease: "linear", repeat: Infinity }}
-        className="absolute top-1/2 -translate-y-1/2 flex items-center gap-1 z-10 text-[#ff5500] transform-gpu will-change-transform pointer-events-none"
+        initial={{ x: '-150%' }}
+        animate={{ x: '150%' }}
+        transition={{ duration: 7, ease: "linear", repeat: Infinity }}
+        className="absolute left-0 right-0 top-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-none z-10 text-[#ff5500] transform-gpu will-change-transform"
       >
         <div className="flex items-center gap-1">
           {type === 'bike' ? (
-            <Bike className="w-6 h-6 text-[#ff5500] shadow-[0_0_10px_#ff5500]" />
+            <Bike className="w-6 h-6 text-[#ff5500] drop-shadow-[0_0_8px_#ff5500]" />
           ) : (
-            <Car className="w-6 h-6 text-[#ff5500] shadow-[0_0_10px_#ff5500]" />
+            <Car className="w-6 h-6 text-[#ff5500] drop-shadow-[0_0_8px_#ff5500]" />
           )}
           {/* Speed trail dust line */}
           <div className="w-10 h-[2px] bg-gradient-to-l from-[#ff5500] to-transparent opacity-80" />

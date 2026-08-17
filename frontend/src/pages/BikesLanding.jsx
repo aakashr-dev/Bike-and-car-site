@@ -5,7 +5,7 @@ import VehicleCard from '../components/VehicleCard';
 import FilterBar from '../components/FilterBar';
 import DrivingDivider from '../components/DrivingDivider';
 import { allBikes } from '../data/allVehicles';
-import { Bike, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function BikesLanding({ onToggleFavorite, favoritesList = [], onOpenEnquire, onToggleCompare, comparedList = [] }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -65,7 +65,7 @@ export default function BikesLanding({ onToggleFavorite, favoritesList = [], onO
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
             to="/bikes/scooters"
-            className="group bg-[#141418] border border-white/10 hover:border-[#ff5500]/50 rounded-3xl p-6 flex items-center justify-between transition-all duration-300 shadow-xl"
+            className="group bg-[#141418] border border-white/10 hover:border-[#ff5500]/50 rounded-3xl p-6 flex items-center justify-between transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 shadow-xl transform-gpu"
           >
             <div className="space-y-2">
               <span className="text-xs font-black text-[#ff5500] uppercase tracking-widest block">
@@ -78,14 +78,14 @@ export default function BikesLanding({ onToggleFavorite, favoritesList = [], onO
                 Activa 6G, TVS Ntorq Race XP, Ather 450X EV, Suzuki Access 125.
               </p>
             </div>
-            <div className="w-12 h-12 rounded-2xl bg-[#ff5500] text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-              <ArrowRight className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-[#ff5500] text-white flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out shrink-0 transform-gpu">
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform duration-200" />
             </div>
           </Link>
 
           <Link
             to="/bikes/gear-bikes"
-            className="group bg-[#141418] border border-white/10 hover:border-[#ff5500]/50 rounded-3xl p-6 flex items-center justify-between transition-all duration-300 shadow-xl"
+            className="group bg-[#141418] border border-white/10 hover:border-[#ff5500]/50 rounded-3xl p-6 flex items-center justify-between transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 shadow-xl transform-gpu"
           >
             <div className="space-y-2">
               <span className="text-xs font-black text-[#ff5500] uppercase tracking-widest block">
@@ -98,8 +98,8 @@ export default function BikesLanding({ onToggleFavorite, favoritesList = [], onO
                 Divided into Small CC (100-150cc), Mid CC (150-300cc), and High CC Superbikes (300cc+).
               </p>
             </div>
-            <div className="w-12 h-12 rounded-2xl bg-[#ff5500] text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-              <ArrowRight className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-[#ff5500] text-white flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out shrink-0 transform-gpu">
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform duration-200" />
             </div>
           </Link>
         </div>

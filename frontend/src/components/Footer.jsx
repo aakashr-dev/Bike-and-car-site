@@ -21,19 +21,19 @@ export default function Footer() {
   return (
     <footer className="bg-[#050507] border-t border-white/10 text-gray-400 pt-0 pb-8 relative overflow-hidden">
       
-      {/* Top Animated Horizontal Driving Marquee Strip */}
-      <div className="bg-[#0e0e12] border-b border-white/10 py-3 overflow-hidden relative">
+      {/* Top Animated Horizontal Driving Marquee Strip (GPU Composited) */}
+      <div className="bg-[#0e0e12] border-b border-white/10 py-3 overflow-hidden relative select-none">
         <motion.div
-          animate={{ x: [0, -1200] }}
-          transition={{ repeat: Infinity, duration: 25, ease: "linear" }}
-          className="flex items-center gap-12 whitespace-nowrap"
+          animate={{ x: ['0%', '-50%'] }}
+          transition={{ repeat: Infinity, duration: 28, ease: "linear" }}
+          className="flex items-center gap-12 whitespace-nowrap transform-gpu will-change-transform"
         >
-          {[...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, idx) => (
+          {[...marqueeItems, ...marqueeItems, ...marqueeItems, ...marqueeItems].map((item, idx) => (
             <div key={idx} className="flex items-center gap-2 text-xs font-black uppercase text-gray-400 tracking-wider">
               {item.type === 'bike' ? (
-                <Bike className="w-4 h-4 text-[#ff5500] animate-bounce" />
+                <Bike className="w-4 h-4 text-[#ff5500] drop-shadow-[0_0_6px_rgba(255,85,0,0.6)]" />
               ) : (
-                <Car className="w-4 h-4 text-emerald-400 animate-bounce" />
+                <Car className="w-4 h-4 text-emerald-400 drop-shadow-[0_0_6px_rgba(16,185,129,0.6)]" />
               )}
               <span>{item.label}</span>
               <span className="text-[#ff5500]">•</span>

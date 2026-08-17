@@ -4,8 +4,8 @@ import HeroSection from '../components/HeroSection';
 import VehicleCard from '../components/VehicleCard';
 import FilterBar from '../components/FilterBar';
 import DrivingDivider from '../components/DrivingDivider';
-import { allCars, oldModelCars, topModelCars } from '../data/allVehicles';
-import { Car, ArrowRight } from 'lucide-react';
+import { allCars } from '../data/allVehicles';
+import { ArrowRight } from 'lucide-react';
 
 export default function CarsLanding({ onToggleFavorite, favoritesList = [], onOpenEnquire, onToggleCompare, comparedList = [] }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -68,7 +68,7 @@ export default function CarsLanding({ onToggleFavorite, favoritesList = [], onOp
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Link
             to="/cars/old-models"
-            className="group bg-[#141418] border border-white/10 hover:border-[#ff5500]/50 rounded-3xl p-6 flex items-center justify-between transition-all duration-300 shadow-xl"
+            className="group bg-[#141418] border border-white/10 hover:border-[#ff5500]/50 rounded-3xl p-6 flex items-center justify-between transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 shadow-xl transform-gpu"
           >
             <div className="space-y-2">
               <span className="text-xs font-black text-[#ff5500] uppercase tracking-widest block">
@@ -81,14 +81,14 @@ export default function CarsLanding({ onToggleFavorite, favoritesList = [], onOp
                 Budget friendly under 4 Lakhs: Swift VXi (2013), Honda City (2012), i10 (2011), Alto (2014).
               </p>
             </div>
-            <div className="w-12 h-12 rounded-2xl bg-[#ff5500] text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-              <ArrowRight className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-[#ff5500] text-white flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out shrink-0 transform-gpu">
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform duration-200" />
             </div>
           </Link>
 
           <Link
             to="/cars/top-models"
-            className="group bg-[#141418] border border-white/10 hover:border-emerald-500/50 rounded-3xl p-6 flex items-center justify-between transition-all duration-300 shadow-xl"
+            className="group bg-[#141418] border border-white/10 hover:border-emerald-500/50 rounded-3xl p-6 flex items-center justify-between transition-[border-color,box-shadow,transform] duration-300 hover:-translate-y-1 shadow-xl transform-gpu"
           >
             <div className="space-y-2">
               <span className="text-xs font-black text-emerald-400 uppercase tracking-widest block">
@@ -101,8 +101,8 @@ export default function CarsLanding({ onToggleFavorite, favoritesList = [], onOp
                 Premium recent models (2020-2025): Thar 4x4, BMW 330i M Sport, Safari Dark, Creta DCT.
               </p>
             </div>
-            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center group-hover:scale-110 transition-transform shrink-0">
-              <ArrowRight className="w-6 h-6" />
+            <div className="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center group-hover:scale-105 transition-transform duration-300 ease-out shrink-0 transform-gpu">
+              <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform duration-200" />
             </div>
           </Link>
         </div>

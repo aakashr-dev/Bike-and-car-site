@@ -7,7 +7,7 @@ import { allVehicles } from '../data/allVehicles';
 import { ShieldCheck, Heart, Layers, Star, CheckCircle, ArrowLeft } from 'lucide-react';
 
 export default function VehicleDetail({ onToggleFavorite, favoritesList = [], onOpenEnquire, onToggleCompare, comparedList = [] }) {
-  const { type, id } = useParams();
+  const { id } = useParams();
 
   const vehicle = allVehicles.find(v => v.id === id) || allVehicles[0];
   const [activeImage, setActiveImage] = useState(vehicle.image);
@@ -65,18 +65,18 @@ export default function VehicleDetail({ onToggleFavorite, favoritesList = [], on
                 </div>
               </div>
 
-              {/* Thumbnails */}
+               {/* Thumbnails */}
               {galleryList.length > 1 && (
                 <div className="flex items-center gap-3 overflow-x-auto pb-2">
                   {galleryList.map((imgUrl, idx) => (
                     <button
                       key={idx}
                       onClick={() => setActiveImage(imgUrl)}
-                      className={`w-24 h-16 rounded-xl overflow-hidden border-2 transition-all shrink-0 ${
-                        activeImage === imgUrl ? 'border-[#ff5500] scale-105 shadow-md' : 'border-white/10 opacity-60 hover:opacity-100'
+                      className={`w-24 h-16 rounded-xl overflow-hidden border-2 transition-[transform,opacity,border-color] duration-250 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] shrink-0 transform-gpu active:scale-95 ${
+                        activeImage === imgUrl ? 'border-[#ff5500] scale-105 shadow-md opacity-100' : 'border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'
                       }`}
                     >
-                      <img src={imgUrl} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" />
+                      <img src={imgUrl} alt={`Thumbnail ${idx}`} className="w-full h-full object-cover" decoding="async" />
                     </button>
                   ))}
                 </div>
